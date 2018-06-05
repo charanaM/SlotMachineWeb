@@ -1,0 +1,42 @@
+@(wins: Integer, losses: Integer)
+
+<html>
+    <head> <!-- start of head -->
+        <style>  /* styling properties */
+                .para{
+                    font-size: 175%;  /* font size of the body */
+                    color: black;  /* font colour */
+                    font-family: "Optima", sans-serif; /* font */
+                    text-align: center; /* text alignment */
+                }
+        </style>
+            <!-- end of head -->
+    </head>
+    <body> <!-- start of body -->
+
+        <!-- Labels to display wins and loses -->
+        <p class="para">Number of Wins : @wins <br> Number of Losses : @losses</p>
+
+            <!-- script for connecting app to the cloud -->
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyA8YV5UtYifp2MkK86aClifLrgR1Ik-oKg", //declare api key
+                    authDomain: "slotmachine-fbca6.firebaseapp.com",  //domain authentication
+                    databaseURL: "https://slotmachine-fbca6.firebaseio.com",    //url containing the database
+                    projectId: "slotmachine-fbca6", //project reference id
+                    storageBucket: "slotmachine-fbca6.appspot.com",
+                    messagingSenderId: "521805122079"
+                };
+                firebase.initializeApp(config);
+
+                var db = firebase.database(); //new db variable for the database
+                db.ref("stat").set({  //setting stat root
+                    wins: @wins,        //pass number of wins
+                    losses: @losses     //pass number of loses
+                });
+
+        </script>
+    </body> <!-- end of body -->
+</html>

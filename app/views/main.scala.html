@@ -1,0 +1,23 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+            <!-- start of head -->
+            <!-- main title -->
+        <title>@title</title>
+            <!-- stylesheet reference -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+            <!-- icon reference -->
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+            <!-- javascript refernce -->
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+            <!-- end of head -->
+    </head>
+    <body>
+            <!-- start of body -->
+        @content
+            <!-- end of body -->
+    </body>
+</html>

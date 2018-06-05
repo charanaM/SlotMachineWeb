@@ -1,0 +1,94 @@
+
+@()
+
+<html>
+    <head> <!-- start of the head -->
+            <!-- set styling for the html page -->
+        <style>
+                /* header styling */
+            .head{
+                font-size: 255%; /* font size */
+                text-align: center; /* header text position */
+                color: white; /* header text colour */
+                font-family: "Courier New", monospace; /* header font */
+            }
+                /* labels styling */
+            .label{
+                font-size: 175%; /* label font colour */
+                color: white; /* label font colour */
+                font-family: "Optima", sans-serif; /* label font */
+            }
+
+                /* buttons styling */
+            .button {
+                background-color: #e5e5e5;  /* buttons background colour */
+                color: black;  /* buttons text colour */
+                padding: 12px 32px;  /* buttons padding size */
+                text-align: center;   /* buttons text alignment */
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;   /* buttons font size */
+                border-radius: 12px;   /* buttons border */
+            }
+            .button1{
+                border: 2px solid #990000;  /* button border styling */
+            }
+            .button2{
+                border: 2px solid #555555;  /* button border styling */
+            }
+            .button3{
+                border: 2px solid #6886ff;  /* button border styling */
+            }
+
+                /* body styling */
+            body {
+                padding: 120px 0; /* body padding */
+                background-image: url(assets/images/slotweb3.png); /* body background */
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+
+        </style>
+            <!-- end of the head -->
+    </head>
+    <body> <!-- start of the body -->
+        <h1 class ="head">|| Slot Machine ||</h1> <!-- head content with head element -->
+        <center> <!-- centering elements -->
+
+            <!-- label for total credits -->
+        <div><label id="creditlbl" class ="label">Total credits : 10 </label></div>
+                <!-- label for current bet -->
+        <div><label id="betlbl" class ="label">Current bet : 0</label></div>
+                <!-- label for credits won -->
+        <div><label id="creditwon" class ="label">Credits won : 0</label></div>
+
+        <br>
+                <!-- button for spinning the reels -->
+        <button class="button button1" onclick="spin()">Spin</button>
+                <!-- button for bet one -->
+        <button class="button button3" onclick="betone()">Bet One</button>
+                <!-- button for bet max -->
+        <button id="maxbtn" class="button button3" onclick="betmax()">Bet Max</button>
+                <!-- button to add coins -->
+        <button id="addcoin" class="button button1" onclick="addcoin()">Add Coin</button>
+                <!-- button for statistics -->
+        <button id="stats" class="button button2" onclick="statistics()">Stats</button>
+
+        <br>
+        <br>
+        <div><!-- first image reel -->
+            <img src="assets/images/bell.png" id="imgReel" width="150px" onclick="stop1()"/>
+                <!-- second image reel -->
+            <img src="assets/images/bell.png" id="imgReel1" width="150px" onclick="stop2()"/>
+                <!-- third image reel -->
+            <img src="assets/images/bell.png" id="imgReel2" width="150px" onclick="stop3()"/>
+
+        </div>
+        </center>
+            <!-- java script file for the slot machine -->
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/script.js")"></script>
+            <!-- end of body -->
+    </body>
+</html>
